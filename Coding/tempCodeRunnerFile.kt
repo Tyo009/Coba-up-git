@@ -1,1 +1,1 @@
-"$awal $tengah $akhir"
+args
