@@ -1,33 +1,33 @@
 import java.util.Scanner
 
 class Restoran {
-    private val menu = mutableMapOf<String, Int>()
+    private val Menu = mutableMapOf<String, Int>()
 
     init {
-        menu["Nasi Goreng"] = 15000
-        menu["Mie Goreng"] = 12000
-        menu["Ayam Bakar"] = 25000
-        menu["Sop Buntut"] = 35000
+        Menu["Nasi Goreng"] = 15000
+        Menu["Mie Goreng"] = 12000
+        Menu["Ayam Bakar"] = 25000
+        Menu["Sop Buntut"] = 35000
     }
 
     fun lihatMenu() {
-        if (menu.isNotEmpty()) {
+        if (Menu.isNotEmpty()) {
             println("Menu Restoran:")
             var nomorMenu = 1
-            for ((nama, harga) in menu) {
-                println("$nomorMenu. $nama: Rp $harga")
+            for ((nama, harga) in Menu) {
+                println("$nomorMenu $nama: Rp $harga")
                 nomorMenu++
             }
         } else {
-            println("Restoran belum memiliki menu.")
+            println("Tidak Ada Dalam Menu")
         }
     }
 
     fun beliMenu(nomorMenu: Int, jumlah: Int): Int? {
-        val menuKeys = menu.keys.toList()
+        val menuKeys = Menu.keys.toList()
         if (nomorMenu in 1..menuKeys.size) {
             val menuKey = menuKeys[nomorMenu - 1]
-            val harga = menu[menuKey] ?: return null
+            val harga = Menu[menuKey] ?: return null
             return harga * jumlah
         } else {
             println("Menu dengan nomor tersebut tidak ada.")
@@ -41,7 +41,7 @@ fun main() {
     val restoran = Restoran()
 
     while (true) {
-        println("\nPilih Operasi:")
+        println("Pilih Operasi:")
         println("1. Lihat Menu")
         println("2. Beli Menu")
         println("3. Keluar")
