@@ -4,7 +4,6 @@ class Restoran {
     private val menu = mutableMapOf<String, Int>()
 
     init {
-        // Menambahkan menu contoh
         menu["Nasi Goreng"] = 15000
         menu["Mie Goreng"] = 12000
         menu["Ayam Bakar"] = 25000
@@ -58,10 +57,10 @@ fun main() {
                     restoran.lihatMenu()
                     print("Masukkan nomor menu yang ingin dibeli: ")
                     val nomorMenu = scanner.nextInt()
-                    scanner.nextLine() // Membersihkan newline character
+                    scanner.nextLine()
                     print("Masukkan jumlah yang ingin dibeli: ")
                     val jumlah = scanner.nextInt()
-                    scanner.nextLine() // Membersihkan newline character
+                    scanner.nextLine()
                     val total = restoran.beliMenu(nomorMenu, jumlah)
                     if (total != null) {
                         println("Total harga: Rp $total")
