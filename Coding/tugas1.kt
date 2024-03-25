@@ -24,10 +24,10 @@ class Restoran {
     }
 
     fun beliMenu(nomorMenu: Int, jumlah: Int): Int? {
-        val menuKeys = Menu.keys.toList()
-        if (nomorMenu in 1..menuKeys.size) {
-            val menuKey = menuKeys[nomorMenu - 1]
-            val harga = Menu[menuKey] ?: return null
+        val Pilihan = Menu.keys.toList()
+        if (nomorMenu in 1..Pilihan.size) {
+            val PilihanMenu = Pilihan[nomorMenu - 1]
+            val harga = Menu[PilihanMenu] ?: return null
             return harga * jumlah
         } else {
             println("Menu dengan nomor tersebut tidak ada.")
@@ -67,13 +67,13 @@ fun main() {
                     }
                 }
                 3 -> {
-                    println("Terima kasih! Sampai jumpa.")
+                    println("Masukkan Pilihan Kode Yang Sesuai")
                     return
                 }
                 else -> println("Pilihan tidak valid. Silakan pilih lagi.")
             }
         } catch (e: NumberFormatException) {
-            println("Input tidak valid. Masukkan nomor.")
+            println("Masukkan Pilihan Kode Yang Sesuai")
         }
     }
 }
